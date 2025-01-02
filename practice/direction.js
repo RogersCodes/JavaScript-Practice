@@ -13,25 +13,26 @@ function dominantDirection(text) {
       return counts;
     }
   
-    const SCRIPTS = [
-        {
-            name: "Latin",
-            ranges: [[0x0000, 0x007F], [0x0080, 0x00FF]],
-            direction: "ltr",
-            year: 2010,
-            living: true,
-            link: "https://en.wikipedia.org/wiki/Latin_script_in_Unicode"
-        },
-        {
-            name: "Arabic",
-            ranges: [[0x0600, 0x06FF], [0x0750, 0x077F]],
-            direction: "rtl",
-            year: 400,
-            living: true,
-            link: "https://en.wikipedia.org/wiki/Arabic_script_in_Unicode"
-          }
-    ]
+    
     function characterScript(code) {
+        const SCRIPTS = [
+            {
+                name: "Latin",
+                ranges: [[0x0000, 0x007F], [0x0080, 0x00FF]],
+                direction: "ltr",
+                year: 2010,
+                living: true,
+                link: "https://en.wikipedia.org/wiki/Latin_script_in_Unicode"
+            },
+            {
+                name: "Arabic",
+                ranges: [[0x0600, 0x06FF], [0x0750, 0x077F]],
+                direction: "rtl",
+                year: 400,
+                living: true,
+                link: "https://en.wikipedia.org/wiki/Arabic_script_in_Unicode"
+              }
+        ]
       for (let script of SCRIPTS) {
         if (script.ranges.some(([from, to]) => {
           return code >= from && code < to;
@@ -48,7 +49,9 @@ function dominantDirection(text) {
     if (scripts.length === 0) return "ltr";
     return scripts.reduce((a, b) => (a.count > b.count ? a : b)).name;
   }
+
   console.log(dominantDirection("Hello!"));
   console.log(dominantDirection("Hey, مساء الخير"));
-  console.log(characterScript(0x007F));
+  console.log(typeof characterScript);
+  //console.log(characterScript(0x007F));
   
