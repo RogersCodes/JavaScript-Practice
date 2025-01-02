@@ -21,7 +21,15 @@ function dominantDirection(text) {
             year: 2010,
             living: true,
             link: "https://en.wikipedia.org/wiki/Latin_script_in_Unicode"
-        }
+        },
+        {
+            name: "Arabic",
+            ranges: [[0x0600, 0x06FF], [0x0750, 0x077F]],
+            direction: "rtl",
+            year: 400,
+            living: true,
+            link: "https://en.wikipedia.org/wiki/Arabic_script_in_Unicode"
+          }
     ]
     function characterScript(code) {
       for (let script of SCRIPTS) {
