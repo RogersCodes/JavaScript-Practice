@@ -49,3 +49,4 @@ const memoizedFn = memoize(function (a, b) {
  console.log(memoizedFn(2, 3));
  console.log(callCount);
  console.log(memoizedFactorial(5));
+ console.log(fib(8));
