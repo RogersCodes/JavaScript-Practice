@@ -45,3 +45,5 @@ const memoizedFn = memoize(function (a, b) {
  * memoizedFn(2, 3) // 5
  * console.log(callCount) // 1 
  */
+
+ console.log(memoizedFn(2, 3))
